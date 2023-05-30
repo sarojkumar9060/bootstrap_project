@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .container h2 {
+      text-align: center;
+    }
+
+    .container input[type="text"],
+    .container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .container input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .container .show-password {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="checkbox" id="showPasswordCheckbox" class="show-password">
+      <label for="showPasswordCheckbox">Show Password</label>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <script>
+    var passwordInput = document.getElementById("password");
+    var showPasswordCheckbox = document.getElementById("showPasswordCheckbox");
+
+    showPasswordCheckbox.addEventListener("change", function() {
+      if (showPasswordCheckbox.checked) {
+        passwordInput.type = "text";
+      } else {
+        passwordInput.type = "password";
+      }
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var username = document.getElementById("username").value;
+      var password = passwordInput.value;
+
+      // Perform login validation
+      if (username === "admin" && password === "password") {
+        alert("Login successful!");
+        // Redirect to the dashboard or another page
+        // window.location.href = "dashboard.html";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup and Login Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .container h2 {
+      text-align: center;
+    }
+
+    .container input[type="text"],
+    .container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .container input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .container .show-password {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="showPasswordCheckbox">
+        <label class="form-check-label" for="showPasswordCheckbox">Show Password</label>
+      </div>
+      <input type="submit" value="Login">
+    </form>
+    <p>Don't have an account? <a href="#" data-toggle="modal" data-target="#signupModal">Sign up</a></p>
+  </div>
+
+  Signup Modal -->
+<!--   
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signupModalLabel">Sign up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="signupForm">
+            <input type="text" id="signupUsername" placeholder="Username" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="showSignupPasswordCheckbox">
+              <label class="form-check-label" for="showSignupPasswordCheckbox">Show Password</label>
+            </div>
+            <input type="submit" value="Sign up">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popper -->
+
+<!-- 
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>Signup and Login Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: white;
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .container input[type="text"],
+    .container input[type="email"],
+    .container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .container input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .container .show-password {
+      margin-top: 10px;
+    }
+
+    .modal-content {
+      background-color: #f7f7f7;
+    }
+  </style>
+</head>
+<body> -->
+  <!-- Signup Modal -->
+  <!-- <div class="modal fade" id="signupModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Signup</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="signupForm">
+            <input type="text" id="fullname" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <div class="form-group">
+              <input type="password" id="password" placeholder="Password" required>
+              <div class="form-check">
+                <input type="checkbox" id="showSignupPasswordCheckbox" class="form-check-input show-password">
+                <label class="form-check-label" for="showSignupPasswordCheckbox">Show Password</label>
+              </div>
+ -->
+
+<!-- 
+
+            </div>
+            <input type="submit" value="Signup">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Login Modal -->
+  <!-- <div class="modal fade" id="loginModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Login</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <div class="form-group">
+              <input type="password" id="loginPassword" placeholder="Password" required>
+              <div class="form-check">
+                <input type="checkbox" id="showLoginPasswordCheckbox" class="form-check-input show-password">
+                <label class="form-check-label" for="showLoginPasswordCheckbox">Show Password</label>
+              </div>
+            </div>
+            <input type="submit" value="Login">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Signup and Login Buttons -->
+  
+  <!-- <div class="container"> -->
+    <!-- <h2>Welcome!</h2> -->
+    <!-- <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#signupModal">Signup</button>
+    <button type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#loginModal">Login</button>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      // Signup form submit
+      $("#signupForm").submit(function(event) {
+        event.preventDefault();
+        var fullName = $("#fullname").val();
+        var email = $("#email").val();
+        var password = $("#password").val();
+        var savePassword = $("#savePasswordCheckbox").is(":checked");
+
+        // Perform signup validation
+        if (fullName !== "" && email !== "" && password !== "") {
+          // Perform signup logic
+          // ...
+
+          // Clear the form fields
+          $("#fullname").val("");
+          $("#email").val("");
+          $("#password").val("");
+
+          // Close the signup modal
+          $("#signupModal").modal("hide");
+
+          // Show a success message (optional)
+          alert("Signup successful!");
+
+          // Save password if checkbox is checked
+          if (savePassword) {
+            localStorage.setItem("savedPassword", password);
+          }
+        } else {
+          alert("Please fill in all the fields.");
+        }
+      }); -->
+<!-- 
+      // Login form submit
+      $("#loginForm").submit(function(event) {
+        event.preventDefault();
+        var loginEmail = $("#loginEmail").val();
+        var loginPassword = $("#loginPassword").val();
+
+        // Perform login validation
+        if (loginEmail !== "" && loginPassword !== "") {
+          // Perform login logic
+          // ...
+
+          // Clear the form fields
+          $("#loginEmail").val("");
+          $("#loginPassword").val("");
+
+          // Close the login modal
+          $("#loginModal").modal("hide");
+
+          // Show a success message (optional)
+          alert("Login successful!");
+        } else {
+          alert("Please fill in all the fields.");
+        }
+      });
+
+      // Show Password toggle
+      $(".show-password").change(function() {
+        var passwordField = $(this).
+        closest(".form-group").find("input[type='password']");
+        if ($(this).is(":checked")) {
+          passwordField.attr("type", "text");
+        } else {
+          passwordField.attr("type", "password");
+        }
+      });
+
+      // Retrieve saved password if available
+      var savedPassword = localStorage.getItem("savedPassword");
+      if (savedPassword) {
+        $("#loginPassword").val(savedPassword);
+        $("#savePasswordCheckbox").prop("checked", true);
+      } -->
+    <!-- });
+  </script>
+</body>
+</html>  -->
+<!-- 
